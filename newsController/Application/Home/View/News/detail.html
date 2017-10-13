@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+{$Think.get.s}
+<include file="Public:header"/>
+<div>性别:<if condition="$Think.get.s eq 1">女<elseif condition="$Think.get.s eq 2"/>男<else/>保密</if></div>
+<h1>标题:{$arr.title}</h1>
+<div>内容:{$arr.contents}</div>
+<hr/>
+APP:__APP__<br/>
+MODULE:__MODULE__<br/>
+URL:__URL__<br/>
+ACTION:__ACTION__<br/>
+PUBLIC:__PUBLIC__<br/>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.page{
+	margin:10px 0;
+}
+.page .num,.page .next,.page .prev{
+	display:inline-block;
+	padding:3px 5px;
+	border:1px solid orange;
+	background:#f2f2f2;
+	margin:0 3px;
+}
+.page .current{
+	display:inline-block;
+	padding:3px 5px;
+	border:1px solid orange;
+	background:#fedcba;
+	margin:0 3px;
+}
+</style>
+</head>
+<body>
+<include file="Public:header"/>
+<h1>文章列表<{$a}></h1>
+<table border='1'>
+	<foreach name='arr' key='k' item="v">
+	<tr <if condition="$k%2 eq 0">style='background:#abcdef'<else/>style='background:#fedcba'</if>>
+		<td>{$v.id}</td>
+		<td><a href="__URL__/detail/id/{$v.id}">{$v.title}</a></td>
+		<td>{$v.tname}</td>
+		<td>{$v.addtime|date='Y-m-d H:i:s',###}</td>
+	</tr>
+	</foreach>
+</table>
+<div class="page">{$pageStr}</div>
+</body>
+</html>

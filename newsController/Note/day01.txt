@@ -1,0 +1,125 @@
+﻿画程序的组织关系:
+	url index.php?g=***&c=***&a=***
+	|
+	index.php  Controller
+	|            |
+	XxxController/xxx
+	|
+-------------------
+|  Model           V
+|  |
+XxxModel
+
+ThinkPHP 3-4天
+基于MVC软件设计模式,编写的php框架
+框架:一个物体的主体部分.
+程序框架:把项目中可能用的核心代码,进行编写.
+
+如何学习ThinkPHP?
+url地址规则
+index.php编写
+C层的编写规则
+M层的编写规则
+V层的编写规则
+公共类的使用
+
+下载:
+thinkphp.cn
+安装:
+新建一个入口文件
+index.php
+define('APP_PATH','./Application/');//指定项目目录 
+define('APP_DEBUG',true);//开启调试模式
+require './ThinkPHP/ThinkPHP.php';//加载thinkphp的入口文件
+application
+	Common --- 公共模块 封装一个数据模型类
+	Home --- 模块目录 前台对应的控制器 数据模型类 ....
+		Common 
+			function.php --- 自定义函数
+		Controller
+			控制器
+		Conf
+			配置文件
+		Model
+			数据模型类
+		View
+			模板
+	Admin
+		
+	User
+	Runtime --- 缓存文件 临时文件
+
+url地址规则:
+***/index.php?m=模块&c=控制器&a=方法   //普通模式
+***/index.php/模块/控制器/方法 //pathinfo模式
+***/index.php?s=模块/控制器/方法 //混合模式
+
+控制器的编写:
+	命名 XxxController.class.php
+	类名和类文件名一致
+	必须继承Controller ???
+	使用了命名空间
+	namespace 模块名\Controller;
+	use Think\Controller;
+Controller给我们提供什么方法:
+给模板传值
+$this->assign(模板标签名,被传递的值)
+显示模板
+$this->display([模板的路径]);
+说明:display()没有参数找控制器方法对应的默认模板.
+View/控制器名/方法名.html
+路径的写法:./application/Home/View/控制器/模板
+
+控制器名/方法 ---- 对应的默认模板
+
+News/listern ---- View/News/listern.html
+News/a ---- View/News/a.html
+
+练习:呈现文章列表页,在文章标题上加一个连接,点击进入详细页.
+
+获取模板运行结果的方法
+fetch()
+跳转
+redirect("模块/控制器/方法"); //header()
+跳转提示
+success("提示内容",目标地址,等待时间);
+error("提示内容",目标地址,等待时间);
+生成url地址:
+U("模块/控制器/方法",array('参数名'=>值)) 快捷函数
+***/index.php/Home/News/datail/id/14
+
+控制器初始化的方法 _initialize
+
+http://localhost/psd1705/14_ThinkPHP/index.php/Home/News/lister/page/5.html
+例子:实现文章列表页.
+NewsController
+	function lister(){
+		echo "News-lister";
+	}
+例子:实现文章的后台添加,管理.
+静态资源放在哪?
+Public
+例子:后台访问控制
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

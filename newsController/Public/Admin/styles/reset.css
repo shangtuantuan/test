@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+body{
+	   font-size:12px;
+	   font-famliy:宋体,arial;
+}
+body,div,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,tr,td,th,form,input,select,textarea{
+	margin:0;
+	padding:0;
+}
+a{
+	color:#333;
+	text-decoration:none;
+}
+a:hover{
+	 color:#900;
+	text-decoration:underline;
+}
+img{
+	border:0;
+}
+h1,h2,h3,h4,h5,h6{
+	 font-size:16px;
+	 font-weight:bold;
+}
+/* 清除获得焦点时的蓝色边框*/
+:focus{
+	outline:none;
+}
+/*去掉 列表中的项目符号*/
+ul,ol,li{
+	  list-style:none;
+}
+/*万能清除*/
+.clear{
+	clear:both;
+	zoom:1;
+}
+.clear:after{
+	 content:".";
+	clear:both;
+	display:block;
+	height:0;
+	visibility:hidden;
+}
+
+
+
+
+
+
+

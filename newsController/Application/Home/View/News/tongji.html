@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<include file="Public/header"/>
+<table>
+	<tr>
+		<th>分类id</th>
+		<th>文章条数</th>
+	</tr>
+	<foreach name='arr' item='v'>
+	<tr>
+		<td>{$v.tname}</td>
+		<td>{$v.num}</td>
+	</tr>
+	</foreach>
+</table>
+</body>
+</html>
